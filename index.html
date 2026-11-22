@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>UI 미니 사전</title>
+  <meta name="description" content="헷갈릴 때 꺼내 보는 UI 이름 사전" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/preview.css" />
+  <link rel="stylesheet" href="css/anim.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <b>UI 미니 사전</b>
+      <a href="#" class="brand">My Design Lab</a>
+    </header>
+
+    <section class="hero">
+      <h1>헷갈릴 때<br />꺼내 보는 <span>UI 이름</span></h1>
+      <label class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+        </svg>
+        <input id="q" type="search" autocomplete="off" placeholder="이름이 안 떠오르면 생김새로 찾아요" aria-label="UI 이름 검색" />
+        <button type="button" id="clear" class="clear" aria-label="검색어 지우기" hidden>✕</button>
+      </label>
+      <div class="hints" id="hints">
+        <span>이렇게 찾아봐요</span>
+        <button type="button">아래에서 올라오는 창</button>
+        <button type="button">회색 박스</button>
+        <button type="button">켜고 끄기</button>
+      </div>
+    </section>
+
+    <nav class="chips" id="chips" aria-label="카테고리"></nav>
+
+    <div class="sec-head" id="secHead">
+      <b id="secTitle"></b>
+      <span id="secCount"></span>
+    </div>
+
+    <main id="gridWrap"><div class="grid" id="grid"></div></main>
+
+    <footer class="foot">My Design Lab</footer>
+  </div>
+
+  <div class="full-bar" id="fullBar">
+    <div class="full-text">
+      <div class="full-title"><span class="pop" aria-hidden="true">🎉<i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>풀버전이 출시됐어요</div>
+      <div class="full-sub">UI가 두 배 넘게 늘었어요</div>
+    </div>
+    <a href="#" class="full-cta">보러 가기</a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/previews/feedback.js"></script>
+  <script src="js/previews/form.js"></script>
+  <script src="js/previews/state.js"></script>
+  <script src="js/previews/motion.js"></script>
+  <script src="js/previews/pattern.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
