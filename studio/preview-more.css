@@ -1,0 +1,103 @@
+/* 미리보기 추가 요소: 모두 #preview의 변수(색·둥글기·간격·테두리)만 사용 */
+.pv-crumb { margin-top: var(--gap); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 0.85em; }
+.pv-crumb a { color: var(--sub); text-decoration: none; }
+.pv-crumb b { color: var(--title); font-weight: 600; }
+
+.pv-banner {
+  margin-top: calc(var(--gap) * 0.75);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  padding: 12px 16px; border-radius: var(--radius);
+  background: var(--surface); border: var(--bw) solid var(--line);
+  border-left: max(3px, var(--bw)) solid var(--point);
+  color: var(--title); font-size: 0.9em;
+}
+.pv-banner a { margin-left: auto; color: var(--title); font-weight: 700; }
+
+.pv-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--gap); align-items: start; }
+.pv-split .pv-card { display: flex; flex-direction: column; gap: 10px; }
+.pv-split h3 { margin: 0 0 4px; }
+
+.pv-select {
+  appearance: none; -webkit-appearance: none; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--sub) 50%), linear-gradient(135deg, var(--sub) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size: 5px 5px; background-repeat: no-repeat;
+  padding-right: 36px;
+}
+.pv-field { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.pv-field legend { width: 100%; margin-bottom: 4px; color: var(--title); font-weight: 600; }
+.pv-check { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; color: var(--title); cursor: pointer; }
+.pv-check input, .pv-range { accent-color: var(--point); }
+.pv-check input { width: 18px; height: 18px; margin: 0; }
+.pv-range { width: 100%; height: 24px; }
+
+.pv-progress-head { display: flex; justify-content: space-between; color: var(--title); font-size: 0.9em; margin-top: 4px; }
+.pv-progress { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.pv-progress i { display: block; width: 70%; height: 100%; border-radius: inherit; background: var(--point); }
+
+.pv-avatars { display: flex; flex-wrap: wrap; align-items: center; row-gap: 8px; }
+.pv-avatar {
+  width: 36px; height: 36px; margin-left: -8px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--title); color: var(--bg); font-size: 0.8em; font-weight: 700;
+  border: 2px solid var(--surface);
+}
+.pv-avatar:first-child { margin-left: 0; }
+.pv-avatar:nth-child(2) { background: var(--point); color: var(--on-point); }
+.pv-avatar:nth-child(3) { background: var(--sub); color: var(--bg); }
+.pv-avatar.pv-more { background: var(--bg); color: var(--title); border-color: var(--line); }
+.pv-avatars-text { margin-left: 12px; font-size: 0.85em; }
+
+.pv-acc { border-top: var(--bw) solid var(--line); }
+.pv-acc:last-of-type { border-bottom: var(--bw) solid var(--line); }
+.pv-acc summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  min-height: 44px; cursor: pointer; list-style: none; color: var(--title); font-weight: 600;
+}
+.pv-acc summary::-webkit-details-marker { display: none; }
+.pv-acc summary::after { content: "+"; color: var(--point); font-size: 1.3em; line-height: 1; }
+.pv-acc[open] summary::after { content: "−"; }
+.pv-acc p { margin: 0 0 12px; }
+
+.pv-skeleton { display: grid; gap: 8px; margin-top: 6px; }
+.pv-skeleton i {
+  display: block; height: 10px; border-radius: max(4px, calc(var(--radius) / 3));
+  background: linear-gradient(90deg, var(--line) 25%, var(--surface) 50%, var(--line) 75%);
+  background-size: 200% 100%; animation: pv-shimmer 1.4s linear infinite;
+}
+.pv-skeleton i:nth-child(2) { width: 80%; }
+.pv-skeleton i:nth-child(3) { width: 55%; }
+@keyframes pv-shimmer { from { background-position: 150% 0; } to { background-position: -50% 0; } }
+
+.pv-table-wrap { overflow-x: auto; }
+.pv-table { width: 100%; border-collapse: collapse; font-size: 0.92em; }
+.pv-table th { text-align: left; font-weight: 600; color: var(--sub); padding: 10px 12px; border-bottom: max(1px, var(--bw)) solid var(--title); white-space: nowrap; }
+.pv-table td { padding: 12px; border-bottom: var(--bw) solid var(--line); color: var(--title); }
+.pv-table tbody tr:hover td { background: var(--surface); }
+.pv-badge-on { background: var(--point); color: var(--on-point); border-color: var(--point); }
+
+.pv-pages { display: flex; justify-content: center; gap: 6px; margin-top: var(--gap); }
+.pv-pages button {
+  min-width: 36px; height: 36px; padding: 0 8px; border-radius: max(4px, calc(var(--radius) * 0.6));
+  border: var(--bw) solid var(--line); background: var(--bg); color: var(--title);
+  font: inherit; cursor: pointer;
+}
+.pv-pages button.on { background: var(--title); color: var(--bg); border-color: var(--title); font-weight: 700; }
+
+.pv-modal-wrap {
+  display: flex; justify-content: center; padding: calc(var(--gap) * 1.5) var(--gap);
+  border-radius: var(--radius); background: color-mix(in srgb, var(--title) 45%, var(--bg));
+}
+.pv-modal {
+  width: 100%; max-width: 360px; padding: calc(var(--gap) * 1.1);
+  border-radius: var(--radius); background: var(--bg); border: var(--bw) solid var(--line);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+.pv-modal h3 { margin: 0 0 6px; font-size: 1.1em; }
+.pv-modal p { margin: 0; }
+.pv-modal .pv-row { justify-content: flex-end; }
+
+.pv-pages button:focus-visible, .pv-acc summary:focus-visible, .pv-check input:focus-visible, .pv-range:focus-visible, .pv-select:focus-visible {
+  outline: 2px solid var(--point); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) { .pv-skeleton i { animation: none; } }
