@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>소극장 낮달 — 4색 팔레트 샘플</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root { --bg: #1B2430; --title: #ECE6DA; --sub: #97A0AB; --point: #E2B04A; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--title); font-family: pretendard, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .in { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    .num { font-variant-numeric: tabular-nums; }
+
+    nav .in { height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--sub); }
+    .logo { font-weight: 800; letter-spacing: -0.03em; }
+    .logo i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: var(--point); margin-right: 8px; vertical-align: -1px; }
+    nav span { font-size: 13px; color: var(--sub); }
+
+    .poster { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-top: 64px; padding-bottom: 72px; border-bottom: 1px solid var(--sub); }
+    .when { font-weight: 800; line-height: 0.86; letter-spacing: -0.06em; }
+    .when b { display: block; font-size: clamp(96px, 16vw, 200px); color: var(--point); }
+    .when span { display: block; margin-top: 14px; font-size: 22px; letter-spacing: -0.02em; }
+    .info { align-self: end; }
+    .info small { font-size: 13px; color: var(--sub); }
+    .info h1 { margin-top: 10px; font-size: clamp(30px, 3.6vw, 44px); font-weight: 800; line-height: 1.25; letter-spacing: -0.045em; }
+    .info p { margin-top: 18px; line-height: 1.8; color: var(--sub); max-width: 440px; }
+    .lineup { margin-top: 26px; list-style: none; border-top: 1px solid var(--sub); }
+    .lineup li { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--sub); font-size: 15px; }
+    .lineup li span { color: var(--sub); }
+    .act { margin-top: 28px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; height: 52px; padding: 0 28px; background: var(--point); color: var(--bg); font-weight: 800; }
+    .btn:hover { background: var(--title); }
+    .left { font-size: 14px; color: var(--sub); }
+    .left b { color: var(--title); }
+
+    section, section.in { padding-top: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--sub); }
+    h2 { font-size: 13px; font-weight: 600; color: var(--sub); margin-bottom: 22px; }
+    .shows { list-style: none; }
+    .shows li { display: grid; grid-template-columns: 120px 1fr 160px 110px; gap: 20px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--sub); }
+    .shows li:last-child { border-bottom: 1px solid var(--sub); }
+    .shows time { font-size: 28px; font-weight: 800; letter-spacing: -0.04em; }
+    .shows time small { font-size: 13px; font-weight: 500; color: var(--sub); margin-left: 6px; letter-spacing: 0; }
+    .shows b { font-size: 19px; letter-spacing: -0.03em; }
+    .shows b small { display: block; margin-top: 4px; font-size: 13px; font-weight: 400; color: var(--sub); }
+    .shows .genre { font-size: 13.5px; color: var(--sub); }
+    .shows .st { justify-self: end; font-size: 13.5px; font-weight: 700; }
+    .shows .st.sold { color: var(--sub); text-decoration: line-through; }
+    .shows .st.few { color: var(--point); }
+    .shows li:hover b { color: var(--point); }
+
+    .venue { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .venue div { border-top: 2px solid var(--title); padding-top: 14px; }
+    .venue b { display: block; font-size: 15px; margin-bottom: 8px; }
+    .venue p { font-size: 14px; line-height: 1.75; color: var(--sub); }
+
+    footer { padding: 36px 0 88px; font-size: 13px; color: var(--sub); }
+    footer .in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .sw { display: flex; gap: 6px; align-items: center; }
+    .sw i { width: 14px; height: 14px; border: 1px solid var(--sub); }
+    .back { position: fixed; left: 16px; bottom: 16px; font-size: 12.5px; padding: 8px 12px; background: var(--title); color: var(--bg); }
+
+    @media (max-width: 760px) {
+      .poster, .venue { grid-template-columns: 1fr; }
+      .shows li { grid-template-columns: 1fr auto; }
+      .shows .genre { display: none; }
+      .shows b { grid-column: 1 / -1; grid-row: 2; }
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="in"><a class="logo" href="#"><i></i>소극장 낮달</a><span>합정역 7번 출구 3분 · 객석 60석</span></div></nav>
+
+  <header class="in poster">
+    <div class="when num"><b>12.06</b><span>토요일 저녁 7시 30분</span></div>
+    <div class="info">
+      <small>12월 기획 공연 · 겨울 트리오 시리즈 1</small>
+      <h1>김도현 트리오<br />「느린 눈」 발매 공연</h1>
+      <p>피아노, 콘트라베이스, 브러시 드럼. 첫 정규 앨범의 여덟 곡을 순서대로 연주합니다. 앰프 없이 어쿠스틱으로만 진행해요.</p>
+      <ul class="lineup">
+        <li>김도현<span>피아노</span></li>
+        <li>윤서진<span>콘트라베이스</span></li>
+        <li>박재운<span>드럼</span></li>
+      </ul>
+      <div class="act"><a class="btn" href="#">예매하기 · 35,000원</a><span class="left">남은 좌석 <b class="num">14</b> / 60</span></div>
+    </div>
+  </header>
+
+  <section class="in">
+    <h2>12월 공연 일정</h2>
+    <ul class="shows">
+      <li><time class="num">12.06<small>토</small></time><b>김도현 트리오<small>「느린 눈」 발매 공연</small></b><span class="genre">재즈 · 피아노 트리오</span><span class="st few">14석 남음</span></li>
+      <li><time class="num">12.12<small>금</small></time><b>정하늘 &amp; 류민<small>기타 듀오 저녁</small></b><span class="genre">재즈 · 듀오</span><span class="st">예매 중</span></li>
+      <li><time class="num">12.13<small>토</small></time><b>오후의 현악사중주<small>겨울 소품집</small></b><span class="genre">클래식 · 실내악</span><span class="st sold">매진</span></li>
+      <li><time class="num">12.20<small>토</small></time><b>서연주 퀸텟<small>보컬 재즈 스탠더드</small></b><span class="genre">재즈 · 보컬</span><span class="st">예매 중</span></li>
+      <li><time class="num">12.31<small>수</small></time><b>송년 잼 세션<small>누구나 악기 들고 오세요</small></b><span class="genre">잼 · 자유 참여</span><span class="st">현장 입장</span></li>
+    </ul>
+  </section>
+
+  <section class="in">
+    <div class="venue">
+      <div><b>오시는 길</b><p>합정역 7번 출구에서 상수 방향으로 3분. 건물 지하 1층이에요. 주차는 어렵습니다.</p></div>
+      <div><b>입장</b><p>공연 30분 전부터 입장해요. 좌석은 자유석이고, 음료 한 잔이 포함되어 있습니다.</p></div>
+      <div><b>환불</b><p>공연 3일 전까지 전액, 전날까지 절반을 돌려드려요. 당일에는 양도만 가능해요.</p></div>
+    </div>
+  </section>
+
+  <footer><div class="in">
+    <span>© 2026 소극장 낮달 (가상 공연장)</span>
+    <span class="sw">배경·제목·본문·포인트 <i style="background:var(--bg)"></i><i style="background:var(--title)"></i><i style="background:var(--sub)"></i><i style="background:var(--point)"></i></span>
+  </div></footer>
+  <a class="back" href="./">← 샘플 목록</a>
+</body>
+</html>

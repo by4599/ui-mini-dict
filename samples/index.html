@@ -39,6 +39,16 @@
     .t-bento i:nth-child(1) { grid-row: span 2; background: #1e1e21; }
     .t-bento i:nth-child(2) { background: #c6f36b; }
     .t-bento i:nth-child(5) { background: #2f86f6; }
+
+    .sec2 { margin-top: 72px; padding-top: 40px; border-top: 1px solid #dcdce2; }
+    .sec2 h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.035em; }
+    .pal { background: var(--bg); color: var(--title); flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 18px; gap: 4px; }
+    .pal b { font-size: 22px; letter-spacing: -0.04em; }
+    .pal span { font-size: 12.5px; font-weight: 500; color: var(--sub); }
+    .pal i { position: absolute; right: 18px; top: 18px; width: 34px; height: 34px; border-radius: 50%; background: var(--point); }
+    .chips4 { margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+    .chips4 span { display: block; font-size: 10.5px; color: #48484a; font-family: ui-monospace, Menlo, monospace; }
+    .chips4 span::before { content: ''; display: block; height: 22px; border-radius: 5px; margin-bottom: 4px; background: var(--c); border: 1px solid rgba(0, 0, 0, 0.08); }
   </style>
 </head>
 <body>
@@ -85,6 +95,49 @@
           <div class="tags"><span>격자</span><span>둥근 모서리</span><span>기능 요약</span></div></div>
       </a>
     </main>
+
+    <section class="sec2">
+      <h2>4색 팔레트 샘플</h2>
+      <p class="lead">색은 딱 네 가지만 씁니다. 배경색, 제목 글자색, 제목보다 연한 본문 글자색, 그리고 강조와 버튼에 쓰는 포인트색. 그라디언트, 빛번짐, 이모지 아이콘처럼 흔한 장식 없이 실제 가게처럼 구체적인 내용으로 채웠어요.</p>
+      <div class="grid">
+        <a class="item" href="books.html" style="--bg:#F2EEE6;--title:#1F1D1A;--sub:#6E685F;--point:#B8402A">
+          <div class="thumb pal"><i></i><b>책방 오후</b><span>종이와 먹 · 동네 서점</span></div>
+          <div class="meta"><b>종이와 인주</b><small>Paper &amp; Vermilion</small>
+            <p>누런 종이 위에 먹색 제목, 도장 같은 주홍색 포인트를 씁니다. 세리프 제목에 표로 된 책 목록을 넣었어요.</p>
+            <div class="chips4"><span style="--c:#F2EEE6">F2EEE6</span><span style="--c:#1F1D1A">1F1D1A</span><span style="--c:#6E685F">6E685F</span><span style="--c:#B8402A">B8402A</span></div></div>
+        </a>
+        <a class="item" href="bakery.html" style="--bg:#EAE4D3;--title:#2F3524;--sub:#62664F;--point:#95501C">
+          <div class="thumb pal"><i></i><b>밀과 소금</b><span>올리브와 크러스트 · 빵집</span></div>
+          <div class="meta"><b>올리브와 크러스트</b><small>Olive &amp; Crust</small>
+            <p>크림색 바탕에 짙은 올리브색 글자를 쓰고, 빵 껍질 같은 갈색은 시간과 가격에만 씁니다.</p>
+            <div class="chips4"><span style="--c:#EAE4D3">EAE4D3</span><span style="--c:#2F3524">2F3524</span><span style="--c:#62664F">62664F</span><span style="--c:#95501C">95501C</span></div></div>
+        </a>
+        <a class="item" href="jazz.html" style="--bg:#1B2430;--title:#ECE6DA;--sub:#97A0AB;--point:#E2B04A">
+          <div class="thumb pal"><i></i><b>소극장 낮달</b><span>밤의 남색 · 공연장</span></div>
+          <div class="meta"><b>밤과 낮달</b><small>Night &amp; Mustard</small>
+            <p>보라색 대신 잉크빛 남색을 쓴 어두운 화면이에요. 겨자색은 날짜와 예매 버튼에만 씁니다.</p>
+            <div class="chips4"><span style="--c:#1B2430">1B2430</span><span style="--c:#ECE6DA">ECE6DA</span><span style="--c:#97A0AB">97A0AB</span><span style="--c:#E2B04A">E2B04A</span></div></div>
+        </a>
+        <a class="item" href="conference.html" style="--bg:#EFEFEA;--title:#111111;--sub:#6B6B63;--point:#E8461A">
+          <div class="thumb pal"><i></i><b>형태와 기능 2027</b><span>스위스 그리드 · 컨퍼런스</span></div>
+          <div class="meta"><b>회색과 신호 주황</b><small>Swiss Orange</small>
+            <p>12칸 그리드에 아주 큰 숫자를 놓은 스위스 스타일이에요. 주황 위에는 검은 글자만 올려서 대비를 지켰어요.</p>
+            <div class="chips4"><span style="--c:#EFEFEA">EFEFEA</span><span style="--c:#111111">111111</span><span style="--c:#6B6B63">6B6B63</span><span style="--c:#E8461A">E8461A</span></div></div>
+        </a>
+        <a class="item" href="florist.html" style="--bg:#F3E6DC;--title:#3B1E23;--sub:#7E5D58;--point:#3E5C3A">
+          <div class="thumb pal"><i></i><b>피고 지고</b><span>말린 장미 · 꽃집</span></div>
+          <div class="meta"><b>말린 장미와 잎</b><small>Dried Rose &amp; Leaf</small>
+            <p>살구빛 배경에 와인색 제목, 포인트는 반대색인 잎 초록이에요. 꽃은 그림 대신 동그라미로 표현했어요.</p>
+            <div class="chips4"><span style="--c:#F3E6DC">F3E6DC</span><span style="--c:#3B1E23">3B1E23</span><span style="--c:#7E5D58">7E5D58</span><span style="--c:#3E5C3A">3E5C3A</span></div></div>
+        </a>
+        <a class="item" href="farm.html" style="--bg:#DDE3D6;--title:#1E2A22;--sub:#4F5C52;--point:#A33D19">
+          <div class="thumb pal"><i></i><b>주말농장 꾸러미</b><span>세이지와 토마토 · 채소 배송</span></div>
+          <div class="meta"><b>세이지와 토마토</b><small>Sage &amp; Tomato</small>
+            <p>세이지 초록 바탕에 짙은 숲색 글자, 포인트는 익은 토마토색이에요. 상자 구성표가 첫 화면에 나와요.</p>
+            <div class="chips4"><span style="--c:#DDE3D6">DDE3D6</span><span style="--c:#1E2A22">1E2A22</span><span style="--c:#4F5C52">4F5C52</span><span style="--c:#A33D19">A33D19</span></div></div>
+        </a>
+      </div>
+    </section>
   </div>
 </body>
 </html>

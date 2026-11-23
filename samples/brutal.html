@@ -50,7 +50,7 @@
     .marquee div { display: inline-block; padding: 16px 0; font-size: 22px; font-weight: 900; animation: run 20s linear infinite; }
     @keyframes run { to { transform: translateX(-50%); } }
 
-    section { padding: 96px 0; }
+    section, section.in { padding-top: 96px; padding-bottom: 96px; }
     h2 { font-size: clamp(32px, 4vw, 48px); font-weight: 900; letter-spacing: -0.045em; }
     .cards { margin-top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .card { padding: 28px; }
