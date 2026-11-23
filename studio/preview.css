@@ -136,7 +136,7 @@
 .pv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .pv-chip-f {
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   border: max(1px, var(--bw)) solid var(--line);
   color: var(--sub);
   white-space: nowrap;

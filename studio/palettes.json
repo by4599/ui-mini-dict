@@ -1,5 +1,69 @@
 [
  {
+  "name": "화이트 블루",
+  "bg": "#FFFFFF",
+  "title": "#111827",
+  "sub": "#4B5563",
+  "point": "#2563EB",
+  "group": "classic"
+ },
+ {
+  "name": "화이트 블랙",
+  "bg": "#FFFFFF",
+  "title": "#111111",
+  "sub": "#555555",
+  "point": "#111111",
+  "group": "classic"
+ },
+ {
+  "name": "라이트 그레이 네이비",
+  "bg": "#F5F6F8",
+  "title": "#0F1B2D",
+  "sub": "#5A6372",
+  "point": "#1E3A8A",
+  "group": "classic"
+ },
+ {
+  "name": "화이트 그린",
+  "bg": "#FFFFFF",
+  "title": "#111827",
+  "sub": "#4B5563",
+  "point": "#15803D",
+  "group": "classic"
+ },
+ {
+  "name": "화이트 레드",
+  "bg": "#FFFFFF",
+  "title": "#1F1F1F",
+  "sub": "#5C5C5C",
+  "point": "#DC2626",
+  "group": "classic"
+ },
+ {
+  "name": "화이트 퍼플",
+  "bg": "#FFFFFF",
+  "title": "#18181B",
+  "sub": "#52525B",
+  "point": "#7C3AED",
+  "group": "classic"
+ },
+ {
+  "name": "다크 블루",
+  "bg": "#111827",
+  "title": "#F9FAFB",
+  "sub": "#9CA3AF",
+  "point": "#3B82F6",
+  "group": "classic"
+ },
+ {
+  "name": "블랙 화이트",
+  "bg": "#0A0A0A",
+  "title": "#FAFAFA",
+  "sub": "#A3A3A3",
+  "point": "#FAFAFA",
+  "group": "classic"
+ },
+ {
   "name": "종이와 먹",
   "bg": "#F7F5F0",
   "title": "#1A1A1A",

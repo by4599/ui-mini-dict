@@ -194,35 +194,87 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const palSearch = document.getElementById("palSearch");
+    const palEmpty = document.getElementById("palEmpty");
+    const GROUPS = [["classic", "기본 클래식"], ["", "개성 있는 조합"]];
+
+    function hueWords(hex) {
+        const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255);
+        const max = Math.max(r, g, b), d = max - Math.min(r, g, b);
+        if (d < 0.12) return "무채색 블랙 화이트 그레이 모노";
+        const h = ((max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4) * 60 + 360) % 360;
+        if (h < 15 || h >= 340) return "레드 빨강";
+        if (h < 45) return "오렌지 주황 코랄";
+        if (h < 70) return "옐로 노랑 골드 머스타드";
+        if (h < 170) return "그린 초록 민트";
+        if (h < 200) return "청록 틸 시안";
+        if (h < 250) return "블루 파랑 네이비";
+        if (h < 290) return "퍼플 보라 라벤더";
+        return "핑크 분홍 로즈";
+    }
+
+    function searchText(p) {
+        const dark = contrast(p.bg, "#000000") < contrast(p.bg, "#FFFFFF");
+        return [p.name, p.group === "classic" ? "클래식 기본 무난" : "개성",
+            dark ? "다크 어두운 블랙 밤" : "라이트 밝은 화이트", hueWords(p.point)].join(" ").toLowerCase();
+    }
+
+    function filterPalettes() {
+        const words = palSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
+        let shown = 0;
+        palettesContainer.querySelectorAll(".pal-btn").forEach(btn => {
+            btn.hidden = !words.every(w => btn.dataset.search.includes(w));
+            if (!btn.hidden) shown++;
+        });
+        palettesContainer.querySelectorAll(".pal-group").forEach(h => {
+            h.hidden = !palettesContainer.querySelector(`.pal-btn[data-group="${h.dataset.group}"]:not([hidden])`);
+        });
+        palEmpty.hidden = shown > 0;
+    }
+    palSearch.addEventListener("input", filterPalettes);
+
     fetch("palettes.json")
         .then(r => r.json())
         .then(data => {
-            data.forEach(p => {
-                if (p.name && ROLES.every(r => p[r] && HEX.test(p[r]))) {
-                    const btn = document.createElement("button");
-                    btn.className = "pal-btn";
-                    btn.type = "button";
-                    btn.setAttribute("aria-pressed", "false");
-                    btn.dataset.colors = JSON.stringify(p);
-                    const swWrap = document.createElement("span");
-                    swWrap.className = "pal-sw";
-                    ROLES.forEach(r => {
-                        const s = document.createElement("i");
-                        s.style.backgroundColor = p[r];
-                        swWrap.appendChild(s);
-                    });
-                    btn.appendChild(swWrap);
-                    const name = document.createElement("span");
-                    name.className = "pal-name";
-                    name.textContent = p.name;
-                    btn.appendChild(name);
-                    palettesContainer.appendChild(btn);
-
-                    btn.addEventListener("click", () => {
-                        const pData = JSON.parse(btn.dataset.colors);
-                        applyColors(pData);
-                    });
+            const valid = data.filter(p => p.name && ROLES.every(r => p[r] && HEX.test(p[r])));
+            const ordered = GROUPS.flatMap(([key, label]) => {
+                const items = valid.filter(p => (p.group === "classic" ? "classic" : "") === key);
+                return items.length ? [{ heading: label, key }, ...items] : [];
+            });
+            ordered.forEach(p => {
+                if (p.heading) {
+                    const h = document.createElement("p");
+                    h.className = "pal-group";
+                    h.dataset.group = p.key;
+                    h.textContent = p.heading;
+                    palettesContainer.appendChild(h);
+                    return;
                 }
+                const btn = document.createElement("button");
+                btn.className = "pal-btn";
+                btn.type = "button";
+                btn.setAttribute("aria-pressed", "false");
+                btn.dataset.colors = JSON.stringify(p);
+                btn.dataset.group = p.group === "classic" ? "classic" : "";
+                btn.dataset.search = searchText(p);
+                const swWrap = document.createElement("span");
+                swWrap.className = "pal-sw";
+                ROLES.forEach(r => {
+                    const s = document.createElement("i");
+                    s.style.backgroundColor = p[r];
+                    swWrap.appendChild(s);
+                });
+                btn.appendChild(swWrap);
+                const name = document.createElement("span");
+                name.className = "pal-name";
+                name.textContent = p.name;
+                btn.appendChild(name);
+                palettesContainer.appendChild(btn);
+
+                btn.addEventListener("click", () => {
+                    const pData = JSON.parse(btn.dataset.colors);
+                    applyColors(pData);
+                });
             });
             markPalette(currentColors);
         })
