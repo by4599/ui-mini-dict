@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pocket — 벤토 그리드 스타일 샘플</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    :root { --bg: #eef0f4; --ink: #15161a; --mute: #6b6f7b; --lime: #c6f36b; --blue: #2f6bff; --card: #fff; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: pretendard, sans-serif; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .in { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    nav .in { height: 72px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 19px; }
+    .logo i { width: 26px; height: 26px; border-radius: 8px; background: var(--ink); position: relative; }
+    .logo i::after { content: ''; position: absolute; left: 7px; top: 7px; width: 12px; height: 12px; border-radius: 3px; background: var(--lime); }
+    .btn { display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 12px; background: var(--ink); color: #fff; font-weight: 700; font-size: 14.5px; }
+    .btn.lime { background: var(--lime); color: var(--ink); }
+
+    .hero { padding-top: 48px; padding-bottom: 32px; text-align: center; }
+    .hero h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; line-height: 1.08; letter-spacing: -0.05em; }
+    .hero h1 span { background: var(--lime); padding: 0 10px; border-radius: 14px; }
+    .hero p { margin: 18px auto 0; max-width: 480px; font-size: 17px; line-height: 1.6; color: var(--mute); }
+    .hero .btn { margin-top: 28px; height: 52px; padding: 0 26px; font-size: 16px; }
+
+    .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 180px; gap: 14px; padding-bottom: 24px; }
+    .tile { background: var(--card); border-radius: 26px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s; }
+    .tile:hover { transform: translateY(-4px); }
+    .tile small { font-size: 13px; color: var(--mute); font-weight: 600; }
+    .tile h3 { margin-top: 6px; font-size: 21px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.25; }
+    .tile p { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--mute); }
+    .w2 { grid-column: span 2; } .h2 { grid-row: span 2; } .wall { grid-column: 1 / -1; }
+    .dark { background: var(--ink); color: #fff; } .dark small, .dark p { color: #a2a6b3; }
+    .lime { background: var(--lime); } .blue { background: var(--blue); color: #fff; } .blue small, .blue p { color: rgba(255, 255, 255, 0.75); }
+
+    .balance { margin-top: auto; }
+    .balance b { display: block; font-size: 46px; font-weight: 800; letter-spacing: -0.05em; }
+    .bars { margin-top: 18px; display: flex; align-items: flex-end; gap: 8px; height: 110px; }
+    .bars i { flex: 1; border-radius: 8px 8px 4px 4px; background: #2c2e36; animation: rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    .bars i.on { background: var(--lime); }
+    @keyframes rise { from { transform: scaleY(0.1); transform-origin: bottom; } }
+
+    .ring { position: absolute; right: 22px; bottom: 20px; width: 84px; height: 84px; }
+    .big { font-size: 54px; font-weight: 800; letter-spacing: -0.05em; margin-top: auto; line-height: 1; }
+    .chips { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+    .chips span { padding: 6px 11px; border-radius: 99px; background: var(--bg); font-size: 13px; font-weight: 600; }
+    .notif { margin-top: auto; background: rgba(255, 255, 255, 0.16); border-radius: 16px; padding: 12px 14px; font-size: 13.5px; display: flex; gap: 10px; align-items: center; }
+    .notif i { width: 30px; height: 30px; border-radius: 9px; background: #fff; flex: none; }
+    .cards-stack { position: absolute; right: -20px; bottom: -30px; width: 180px; height: 110px; }
+    .cards-stack i { position: absolute; inset: 0; border-radius: 14px; }
+    .cards-stack i:nth-child(1) { background: #ff8a65; transform: rotate(-14deg) translate(-30px, -10px); }
+    .cards-stack i:nth-child(2) { background: var(--blue); transform: rotate(-4deg); }
+    .lock { margin-top: auto; font-size: 40px; }
+    .stars { margin-top: auto; font-size: 22px; color: #ffb800; letter-spacing: 2px; }
+
+    .cta { margin: 40px 0 64px; border-radius: 30px; background: var(--ink); color: #fff; padding: 56px 32px; text-align: center; }
+    .cta h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.045em; }
+    .cta p { margin: 12px 0 26px; color: #a2a6b3; }
+    .stores { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+    footer { padding: 0 0 80px; font-size: 13px; color: var(--mute); }
+    footer .in { display: flex; justify-content: space-between; }
+    .back { position: fixed; left: 16px; bottom: 16px; z-index: 9; font-size: 12.5px; padding: 8px 12px; border-radius: 10px; background: var(--ink); color: #fff; }
+
+    @media (max-width: 860px) {
+      .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+    }
+    @media (max-width: 520px) {
+      .bento { grid-template-columns: 1fr; grid-auto-rows: auto; }
+      .tile { min-height: 170px; }
+      .w2, .h2 { grid-column: auto; grid-row: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="in"><a class="logo" href="#"><i></i>Pocket</a><a class="btn" href="#">앱 다운로드</a></div></nav>
+
+  <header class="in hero">
+    <h1>돈 관리가<br /><span>도시락</span>처럼 간단해요</h1>
+    <p>흩어진 계좌와 카드를 한 칸에 담고, 이번 달 얼마 남았는지만 크게 보여 드려요.</p>
+    <a class="btn" href="#">무료로 시작하기</a>
+  </header>
+
+  <main class="in bento">
+    <div class="tile dark w2 h2">
+      <small>이번 달 남은 돈</small>
+      <div class="balance"><b>₩ 842,300</b><p>지난달 같은 날보다 12만 원 더 아꼈어요</p></div>
+      <div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:45%"></i><i class="on" style="height:92%"></i><i style="height:30%"></i></div>
+    </div>
+    <div class="tile lime">
+      <small>저축 목표</small><h3>제주 여행</h3>
+      <svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="5"/><circle cx="18" cy="18" r="15" fill="none" stroke="#15161a" stroke-width="5" stroke-linecap="round" stroke-dasharray="94" stroke-dashoffset="26" transform="rotate(-90 18 18)"/></svg>
+    </div>
+    <div class="tile"><small>연결한 계좌</small><div class="big">14</div><p>은행·카드·증권 한 번에</p></div>
+    <div class="tile blue w2">
+      <small>똑똑한 알림</small><h3>구독료가 오르면 먼저 알려 드려요</h3>
+      <div class="notif"><i></i>음악 스트리밍 요금이 1,100원 올랐어요</div>
+    </div>
+    <div class="tile w2">
+      <small>자동 분류</small><h3>쓴 돈은 알아서 정리돼요</h3>
+      <div class="chips"><span>🍜 식비 32%</span><span>☕ 카페 9%</span><span>🚇 교통 7%</span><span>🛍 쇼핑 18%</span><span>🏠 고정비 34%</span></div>
+    </div>
+    <div class="tile">
+      <small>카드 추천</small><h3>내 소비에 맞는 카드</h3>
+      <div class="cards-stack"><i></i><i></i></div>
+    </div>
+    <div class="tile dark"><small>보안</small><div class="lock">🔒</div><p>은행 수준 암호화, 읽기 전용 연결</p></div>
+    <div class="tile lime wall"><small>앱 평점</small><div class="stars">★★★★★</div><h3>"가계부를 처음으로 한 달 넘게 썼어요"</h3></div>
+  </main>
+
+  <div class="in"><div class="cta">
+    <h2>이번 달부터 가볍게 시작해요</h2>
+    <p>가입 1분, 계좌 연결 3분이면 끝나요.</p>
+    <div class="stores"><a class="btn lime" href="#"> App Store</a><a class="btn lime" href="#">▶ Google Play</a></div>
+  </div></div>
+
+  <footer><div class="in"><span>© 2026 Pocket (가상 브랜드)</span><span>벤토 그리드 스타일 샘플</span></div></footer>
+  <a class="back" href="./">← 샘플 목록</a>
+</body>
+</html>

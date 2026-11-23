@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>스타일별 랜딩 페이지 샘플 · UI 미니 사전</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&display=swap" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f4f4f7; color: #1e1e21; font-family: pretendard, "Pretendard", sans-serif; letter-spacing: -0.02em; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px 80px; }
+    .top { height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .top a { font-size: 13px; color: #8e8e93; }
+    h1 { margin-top: 28px; font-size: 30px; font-weight: 800; line-height: 1.3; letter-spacing: -0.035em; }
+    h1 span { color: #2f86f6; }
+    .lead { margin-top: 10px; font-size: 15px; color: #48484a; line-height: 1.6; }
+    .grid { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .item { background: #fff; border-radius: 18px; padding: 10px 10px 18px; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .item:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08); }
+    .thumb { height: 150px; border-radius: 12px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .meta { padding: 14px 8px 0; }
+    .meta b { font-size: 17px; }
+    .meta small { margin-left: 6px; font-size: 12px; color: #8e8e93; }
+    .meta p { margin-top: 6px; font-size: 13.5px; line-height: 1.55; color: #48484a; }
+    .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .tags span { font-size: 11.5px; padding: 3px 8px; border-radius: 99px; background: #f3f3f6; color: #48484a; }
+
+    .t-min { background: #fafaf8; color: #111; font-size: 26px; letter-spacing: -0.04em; border: 1px solid #eee; }
+    .t-glass { background: radial-gradient(circle at 20% 30%, #ff7eb3 0, transparent 45%), radial-gradient(circle at 80% 70%, #7afcff 0, transparent 45%), #6b5bff; }
+    .t-glass i { width: 62%; height: 58%; border-radius: 16px; background: rgba(255, 255, 255, 0.22); border: 1px solid rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); }
+    .t-brutal { background: #ffe14d; }
+    .t-brutal i { padding: 10px 18px; background: #ff6b9d; border: 3px solid #000; box-shadow: 6px 6px 0 #000; font-style: normal; font-size: 20px; }
+    .t-dark { background: radial-gradient(ellipse at 50% 0, rgba(124, 92, 255, 0.55), transparent 60%), #0b0b12; color: #fff; font-size: 22px; }
+    .t-edit { background: #f3eee4; color: #1a1a1a; font-family: "Noto Serif KR", serif; font-size: 34px; font-weight: 900; font-style: italic; }
+    .t-bento { background: #eef0f4; display: grid; align-items: stretch; justify-content: stretch; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 12px; }
+    .t-bento i { border-radius: 10px; background: #fff; }
+    .t-bento i:nth-child(1) { grid-row: span 2; background: #1e1e21; }
+    .t-bento i:nth-child(2) { background: #c6f36b; }
+    .t-bento i:nth-child(5) { background: #2f86f6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top"><b>스타일 샘플</b><a href="../">← UI 미니 사전</a></header>
+    <h1>같은 랜딩 페이지,<br /><span>스타일만 다르게</span></h1>
+    <p class="lead">대표 웹디자인 스타일 6가지로 만든 가상 브랜드의 랜딩 페이지예요. 눌러서 전체 페이지를 보고, 어떤 UI가 쓰였는지 확인해 보세요.</p>
+
+    <main class="grid">
+      <a class="item" href="minimal.html">
+        <div class="thumb t-min">SODAM.</div>
+        <div class="meta"><b>미니멀</b><small>Minimal</small>
+          <p>넓은 여백, 흑백 위주 색, 큰 글자 하나로 시선을 모아요. 가구·패션·건축 브랜드에 잘 어울려요.</p>
+          <div class="tags"><span>여백</span><span>단색</span><span>얇은 선</span></div></div>
+      </a>
+      <a class="item" href="glass.html">
+        <div class="thumb t-glass"><i></i></div>
+        <div class="meta"><b>글래스모피즘</b><small>Glassmorphism</small>
+          <p>흐릿하게 비치는 반투명 유리 카드를 화려한 그라디언트 위에 겹쳐요. 핀테크·날씨 앱에 많이 써요.</p>
+          <div class="tags"><span>배경 블러</span><span>반투명</span><span>그라디언트</span></div></div>
+      </a>
+      <a class="item" href="brutal.html">
+        <div class="thumb t-brutal"><i>BLOCKO!</i></div>
+        <div class="meta"><b>네오 브루탈리즘</b><small>Neo-brutalism</small>
+          <p>두꺼운 검은 테두리, 어긋난 그림자, 쨍한 원색으로 일부러 투박하게 만들어요. 개성 있는 스타트업에 어울려요.</p>
+          <div class="tags"><span>굵은 테두리</span><span>하드 섀도</span><span>원색</span></div></div>
+      </a>
+      <a class="item" href="dark.html">
+        <div class="thumb t-dark">Orbit</div>
+        <div class="meta"><b>다크 그라디언트</b><small>Dark SaaS</small>
+          <p>검은 배경에 은은한 보랏빛 빛번짐과 얇은 테두리로 기술적인 느낌을 줘요. 개발 도구·SaaS의 단골 스타일이에요.</p>
+          <div class="tags"><span>다크 모드</span><span>글로우</span><span>모노 폰트</span></div></div>
+      </a>
+      <a class="item" href="editorial.html">
+        <div class="thumb t-edit">산책</div>
+        <div class="meta"><b>에디토리얼</b><small>Editorial</small>
+          <p>잡지처럼 세리프 글꼴, 칼럼 그리드, 큰 제목으로 읽는 재미를 살려요. 매거진·블로그·문화 브랜드에 좋아요.</p>
+          <div class="tags"><span>세리프</span><span>칼럼</span><span>큰 제목</span></div></div>
+      </a>
+      <a class="item" href="bento.html">
+        <div class="thumb t-bento"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="meta"><b>벤토 그리드</b><small>Bento grid</small>
+          <p>크기가 다른 네모 칸에 기능을 하나씩 담아 도시락처럼 배치해요. 앱 기능 소개 페이지에 많이 쓰여요.</p>
+          <div class="tags"><span>격자</span><span>둥근 모서리</span><span>기능 요약</span></div></div>
+      </a>
+    </main>
+  </div>
+</body>
+</html>

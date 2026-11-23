@@ -13,7 +13,7 @@
 
   function cardHTML({ id, ko, en, num }) {
     const preview = PV[id] || '<div class="pv"></div>';
-    return `<div class="card">
+    return `<div class="card" role="button" tabindex="0" data-id="${id}" aria-label="${esc(ko)} 설명 보기">
       <div class="well">${preview}</div>
       <div class="card-name"><b><em>${pad(num)}</em>${esc(ko)}</b><small>${esc(en)}</small></div>
     </div>`;
@@ -84,6 +84,17 @@
   els.hints.addEventListener('click', (e) => {
     const b = e.target.closest('button');
     if (b) setQuery(b.textContent);
+  });
+  els.grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.card');
+    if (card) window.openDetail(card.dataset.id);
+  });
+  els.grid.addEventListener('keydown', (e) => {
+    const card = e.target.closest('.card');
+    if (card && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      window.openDetail(card.dataset.id);
+    }
   });
   els.q.addEventListener('input', onQuery);
   els.clear.addEventListener('click', () => { setQuery(''); els.q.focus(); });
