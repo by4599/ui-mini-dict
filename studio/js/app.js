@@ -40,9 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     let warned = false;
+    let saveTimer = null;
     const scheduleSave = () => {
-      if (window.saveTimeout) clearTimeout(window.saveTimeout);
-      window.saveTimeout = setTimeout(() => {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
         try {
           localStorage.setItem(KEY_V2, S.serialize(current));
         } catch (e) {
@@ -100,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  if (window.matchMedia("(max-width: 959px)").matches) document.querySelector('.dev[data-dev="390"]').click();
 
   // Add Dialog Logic
   const addDlg = document.getElementById("addDlg");

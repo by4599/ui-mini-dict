@@ -128,7 +128,7 @@
 <title>내가 만든 화면</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
-body{margin:0}
+body{margin:0}.pv{min-height:100vh}
 ${pruned}
 </style>
 </head>

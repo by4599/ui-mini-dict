@@ -71,7 +71,7 @@ aside.panel { order: 1; }
 .insp fieldset { border: 0; margin-top: 18px; }
 .insp legend { font-size: 13px; font-weight: 800; color: var(--muted); margin-bottom: 2px; }
 .insp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.insp-reset { margin-top: 12px; }
+.insp-reset { margin-top: 12px; grid-column: 1 / -1; justify-self: start; }
 .insp *:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 
 /* Snackbar */
@@ -84,7 +84,7 @@ aside.panel { order: 1; }
 .status-line:empty { display: none; }
 
 /* Dialogs */
-.dlg { border: 0; border-radius: 16px; padding: 20px; width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 48px); color: var(--text); box-shadow: 0 24px 60px rgba(0,0,0,.3); }
+.dlg { margin: auto; border: 0; border-radius: 16px; padding: 20px; width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 48px); color: var(--text); box-shadow: 0 24px 60px rgba(0,0,0,.3); }
 .dlg::backdrop { background: rgba(15,15,20,.45); }
 .dlg-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .dlg-x { width: 44px; height: 44px; border: 0; background: transparent; font-size: 22px; border-radius: 8px; cursor: pointer; }
