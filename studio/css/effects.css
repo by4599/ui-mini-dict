@@ -1,0 +1,30 @@
+.pv .blk { --fx-s: color-mix(in srgb, var(--shade) 28%, transparent); }
+.pv .blk:is([class*=' fx-bd-'], [class*=' fx-bg-'], [class*=' fx-sh-']) { padding: var(--b-pad, calc(var(--gap) * 1.2)); }
+.pv .blk.fx-sh-xs { box-shadow: 0 1px 2px var(--fx-s); }
+.pv .blk.fx-sh-sm { box-shadow: 0 2px 6px var(--fx-s); }
+.pv .blk.fx-sh-md { box-shadow: 0 6px 16px -2px var(--fx-s); }
+.pv .blk.fx-sh-lg { box-shadow: 0 14px 32px -6px color-mix(in srgb, var(--shade) 40%, transparent); }
+.pv .blk.fx-sh-float { box-shadow: 0 30px 60px -18px color-mix(in srgb, var(--shade) 45%, transparent), 0 2px 6px var(--fx-s); }
+.pv .blk.fx-sh-inset { box-shadow: inset 0 2px 8px var(--fx-s); }
+.pv .blk.fx-sh-color { box-shadow: 0 12px 30px -8px color-mix(in srgb, var(--point) 45%, transparent); }
+.pv .blk.fx-sh-hard { box-shadow: 6px 6px 0 var(--title); }
+.pv .blk.fx-bd-solid { border: max(1px, var(--bw)) solid var(--line); }
+.pv .blk.fx-bd-dashed { border: max(1px, var(--bw)) dashed var(--line); }
+.pv .blk.fx-bd-double { border: 4px double var(--line); }
+.pv .blk.fx-bd-thick { border: 3px solid var(--title); }
+.pv .blk.fx-bg-surface { background: var(--surface); }
+.pv .blk.fx-bg-tint { background: var(--tint); }
+.pv .blk.fx-bg-glass { background: color-mix(in srgb, var(--surface) 55%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.pv .blk.fx-bg-invert { --bg: var(--ink); --title: var(--paper); --sub: color-mix(in srgb, var(--paper) 72%, var(--ink)); --surface: color-mix(in srgb, var(--paper) 8%, var(--ink)); --line: color-mix(in srgb, var(--paper) 24%, var(--ink)); background: var(--bg); color: var(--sub); }
+.pv .blk.fx-ac-left { border-left: 4px solid var(--point); }
+.pv .blk.fx-ac-top { border-top: 4px solid var(--point); }
+.pv .blk.fx-ac-bottom { border-bottom: 4px solid var(--point); }
+.pv .blk[class*=' fx-hv-'] { transition: transform .2s ease-out, box-shadow .2s ease-out, filter .2s ease-out; }
+.pv .blk.fx-hv-lift:hover, .pv .blk.fx-hv-lift:focus-within { transform: translateY(-4px); }
+.pv .blk.fx-hv-grow:hover, .pv .blk.fx-hv-grow:focus-within { transform: scale(1.02); }
+.pv .blk.fx-hv-bright:hover { filter: brightness(1.06); }
+.pv .blk.fx-hv-press:active { transform: translateY(2px) scale(.99); }
+@media (prefers-reduced-motion: reduce) {
+  .pv .blk[class*=' fx-hv-'] { transition: none; }
+  .pv .blk[class*=' fx-hv-']:hover, .pv .blk[class*=' fx-hv-']:active, .pv .blk[class*=' fx-hv-']:focus-within { transform: none; filter: none; }
+}

@@ -1,0 +1,60 @@
+/* stats */
+.sk-stats-card .pv-stat { background: var(--surface); border: max(1px, var(--bw)) solid var(--line); border-radius: var(--radius); padding: var(--gap); }
+.sk-stats-divided .pv-stat + .pv-stat { border-left: max(1px, var(--bw)) solid var(--line); padding-left: var(--gap); }
+.sk-stats-point .pv-stat-n { color: var(--point); font-size: 2.4em; }
+
+/* pricing */
+.sk-pricing-featured .pv-plan-pro { border: 2px solid var(--point); }
+.sk-pricing-featured .pv-plan-tag { background: var(--point); color: var(--on-point); }
+.sk-pricing-dark .pv-plan { --bg: var(--ink); --title: var(--paper); --sub: color-mix(in srgb, var(--paper) 72%, var(--ink)); --surface: color-mix(in srgb, var(--paper) 8%, var(--ink)); --line: color-mix(in srgb, var(--paper) 24%, var(--ink)); background: var(--bg); color: var(--sub); }
+.sk-pricing-outline .pv-plan { background: transparent; border: 2px solid var(--line); }
+
+/* steps */
+.sk-steps-line .pv-steps { position: relative; }
+.sk-steps-line .pv-steps::before { content: ""; position: absolute; top: 16px; left: 16px; right: 16px; border-top: 2px solid var(--line); }
+.sk-steps-line .pv-step-n { position: relative; z-index: 1; }
+.sk-steps-card .pv-step { background: var(--surface); border: max(1px, var(--bw)) solid var(--line); border-radius: var(--radius); padding: var(--gap); flex-direction: column; }
+.sk-steps-minimal .pv-step-n { width: auto; height: auto; background: transparent; color: var(--point); font-size: 0.85em; font-weight: 800; }
+.sk-steps-minimal .pv-step-n::before { content: "0"; }
+
+/* timeline */
+.sk-timeline-dots .pv-timeline { border-left: 0; padding-left: 22px; }
+.sk-timeline-card .pv-tl { background: var(--surface); border-radius: var(--radius); padding: 12px 16px; }
+.sk-timeline-compact .pv-tl { display: flex; gap: 16px; align-items: baseline; }
+.sk-timeline-compact .pv-tl-d { min-width: 4em; }
+
+/* quote */
+.sk-quote-card .pv-quote { background: var(--surface); border: max(1px, var(--bw)) solid var(--line); border-radius: var(--radius); padding: calc(var(--gap) * 1.2); }
+.sk-quote-big .pv-quote { position: relative; padding-top: 1.4em; }
+.sk-quote-big .pv-quote::before { content: "\201C"; position: absolute; top: -0.2em; left: 0; font-size: 4em; line-height: 1; color: var(--point); }
+.sk-quote-point .pv-quote { background: var(--point); color: var(--on-point); border-radius: var(--radius); padding: calc(var(--gap) * 1.2); }
+.sk-quote-point blockquote p, .sk-quote-point figcaption b, .sk-quote-point figcaption { color: var(--on-point); }
+
+/* empty */
+.sk-empty-dashed .pv-empty { border: 2px dashed var(--line); border-radius: var(--radius); }
+.sk-empty-card .pv-empty { background: var(--surface); border: max(1px, var(--bw)) solid var(--line); border-radius: var(--radius); }
+.sk-empty-tint .pv-empty { background: var(--tint); border-radius: var(--radius); }
+
+/* search */
+.sk-search-pill .pv-input, .sk-search-pill .pv-btn { border-radius: 999px; }
+.sk-search-line .pv-input { border: 0; border-bottom: max(1px, var(--bw)) solid var(--line); border-radius: 0; background: transparent; }
+.sk-search-fill .pv-input { background: var(--surface); border-color: transparent; }
+
+/* footer */
+.sk-footer-dark { --bg: var(--ink); --title: var(--paper); --sub: color-mix(in srgb, var(--paper) 72%, var(--ink)); --surface: color-mix(in srgb, var(--paper) 8%, var(--ink)); --line: color-mix(in srgb, var(--paper) 24%, var(--ink)); background: var(--bg); color: var(--sub); padding: var(--gap) calc(var(--gap) * 1.2); border-radius: var(--radius); }
+.sk-footer-center .pv-footer { flex-direction: column; align-items: center; text-align: center; }
+.sk-footer-center .pv-footer-copy { margin-left: 0; }
+.sk-footer-line .pv-footer { padding-bottom: var(--gap); border-bottom: max(1px, var(--bw)) solid var(--line); }
+
+/* divider */
+.sk-divider-dashed .pv-divider::before, .sk-divider-dashed .pv-divider::after { border-top-style: dashed; }
+.sk-divider-text .pv-divider span { display: inline; }
+.sk-divider-space .pv-divider::before, .sk-divider-space .pv-divider::after { border-color: transparent; }
+.sk-divider-space .pv-divider { min-height: calc(var(--gap) * 2); }
+
+/* image */
+.sk-image-square .pv-image { max-width: 360px; }
+.sk-image-square .pv-image-box { aspect-ratio: 1; }
+.sk-image-round .pv-image { max-width: 200px; margin-inline: auto; text-align: center; }
+.sk-image-round .pv-image-box { aspect-ratio: 1; border-radius: 50%; }
+.sk-image-framed .pv-image { padding: 10px; background: var(--bg); border: max(1px, var(--bw)) solid var(--line); border-radius: var(--radius); box-shadow: 0 6px 20px -6px color-mix(in srgb, var(--shade) 35%, transparent); }

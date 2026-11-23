@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI 스튜디오</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-    <link rel="stylesheet" href="studio.css">
-    <link rel="stylesheet" href="preview.css">
-    <link rel="stylesheet" href="preview-more.css">
-    <script src="studio.js" defer></script>
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/components-more.css">
+    <link rel="stylesheet" href="css/skins-a.css">
+    <link rel="stylesheet" href="css/skins-b.css">
+    <link rel="stylesheet" href="css/skins-c.css">
+    <link rel="stylesheet" href="css/effects.css">
+    <link rel="stylesheet" href="css/builder.css">
+    <script src="js/state.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/components-forms.js" defer></script>
+    <script src="js/components-more.js" defer></script>
+    <script src="js/export.js" defer></script>
+    <script src="js/theme-panel.js" defer></script>
+    <script src="js/canvas.js" defer></script>
+    <script src="js/inspector.js" defer></script>
+    <script src="js/app.js" defer></script>
 </head>
 <body>
     <div class="app">
-        <aside class="panel">
+        <aside class="panel" aria-label="테마 설정">
             <header>
                 <h1>UI 스튜디오</h1>
                 <a href="../" class="home">← UI 미니 사전</a>
@@ -91,156 +104,78 @@
                     <button id="copyCss" class="btn-ghost" type="button">CSS 복사</button>
                     <button id="reset" class="btn-ghost" type="button">처음으로</button>
                 </div>
-                <p class="hint">미리보기의 글자는 눌러서 바로 고칠 수 있어요</p>
-                <p id="status" class="status" role="status" aria-live="polite"></p>
+                <p class="hint">블록을 누르면 오른쪽에서 스킨·효과를 바꿀 수 있어요</p>
             </footer>
         </aside>
-        <main class="stage">
-            <div id="preview" class="pv" aria-label="미리보기">
-                <nav class="pv-nav">
-                    <b class="pv-logo" contenteditable="true" data-edit="logo">브랜드</b>
-                    <div class="pv-links">
-                        <a href="#" contenteditable="true" data-edit="link-1">소개</a>
-                        <a href="#" contenteditable="true" data-edit="link-2">기능</a>
-                        <a href="#" contenteditable="true" data-edit="link-3">요금</a>
-                    </div>
-                    <a class="pv-btn pv-primary" href="#" contenteditable="true" data-edit="btn-nav">시작하기</a>
-                </nav>
-                <nav class="pv-crumb" aria-label="현재 위치">
-                    <a href="#" contenteditable="true" data-edit="crumb-1">홈</a><span aria-hidden="true">›</span>
-                    <a href="#" contenteditable="true" data-edit="crumb-2">프로젝트</a><span aria-hidden="true">›</span>
-                    <b contenteditable="true" data-edit="crumb-3">3분기 출시</b>
-                </nav>
-                <div class="pv-banner" role="note">
-                    <span contenteditable="true" data-edit="banner-text">이번 주 금요일 오후 6시에 정기 점검이 있어요.</span>
-                    <a href="#" contenteditable="true" data-edit="banner-link">자세히</a>
+        <main class="stage" aria-label="캔버스">
+            <div class="toolbar" role="toolbar" aria-label="캔버스 도구">
+                <div class="devices" role="group" aria-label="미리보기 크기">
+                    <button class="dev" type="button" data-dev="390" aria-pressed="false">모바일</button>
+                    <button class="dev" type="button" data-dev="768" aria-pressed="false">태블릿</button>
+                    <button class="dev" type="button" data-dev="1280" aria-pressed="true">PC</button>
                 </div>
-                <section class="pv-hero">
-                    <span class="pv-chip" contenteditable="true" data-edit="chip-hero">새 기능</span>
-                    <h1 class="pv-h1" contenteditable="true" data-edit="h1-hero">작은 팀을 위한 가장 쉬운 일정 관리</h1>
-                    <p class="pv-lead" contenteditable="true" data-edit="lead">복잡한 도구 없이 핵심 기능에만 집중하세요.</p>
-                    <div class="pv-row">
-                        <a class="pv-btn pv-primary" href="#" contenteditable="true" data-edit="btn-hero-1">무료로 시작하기</a>
-                        <a class="pv-btn pv-secondary" href="#" contenteditable="true" data-edit="btn-hero-2">더 알아보기</a>
-                    </div>
-                </section>
-                <section class="pv-cards">
-                    <article class="pv-card">
-                        <h3 contenteditable="true" data-edit="card1-h">함께 보는 일정</h3>
-                        <p contenteditable="true" data-edit="card1-p">팀 전체 일정을 한 화면에서 확인해요.</p>
-                    </article>
-                    <article class="pv-card">
-                        <h3 contenteditable="true" data-edit="card2-h">알아서 알려 주는 마감</h3>
-                        <p contenteditable="true" data-edit="card2-p">마감 하루 전에 담당자에게 알림이 가요.</p>
-                    </article>
-                    <article class="pv-card">
-                        <h3 contenteditable="true" data-edit="card3-h">가벼운 주간 리포트</h3>
-                        <p contenteditable="true" data-edit="card3-p">매주 월요일, 지난주 진행 상황을 정리해 드려요.</p>
-                    </article>
-                </section>
-                <section class="pv-form">
-                    <article class="pv-card">
-                        <label class="pv-label" for="pv-email" contenteditable="true" data-edit="form-label">이메일</label>
-                        <input id="pv-email" class="pv-input" type="email" placeholder="name@mail.com" aria-label="이메일">
-                        <div class="pv-tabs">
-                            <button class="pv-tab on" type="button" contenteditable="true" data-edit="tab-1">전체</button>
-                            <button class="pv-tab" type="button" contenteditable="true" data-edit="tab-2">진행 중</button>
-                            <button class="pv-tab" type="button" contenteditable="true" data-edit="tab-3">완료</button>
-                        </div>
-                        <div class="pv-chips">
-                            <span class="pv-chip-f on" contenteditable="true" data-edit="chip-f1">긴급</span>
-                            <span class="pv-chip-f" contenteditable="true" data-edit="chip-f2">중요</span>
-                            <span class="pv-chip-f" contenteditable="true" data-edit="chip-f3">대기</span>
-                        </div>
-                        <label class="pv-switch">
-                            <input type="checkbox" checked>
-                            <span class="pv-knob"></span>
-                            <span contenteditable="true" data-edit="switch-text">알림 받기</span>
-                        </label>
-                    </article>
-                </section>
-                <ul class="pv-list">
-                    <li>
-                        <span contenteditable="true" data-edit="list-1">디자인 시안 검토</span>
-                        <span class="pv-badge" contenteditable="true" data-edit="badge-1">진행 중</span>
-                    </li>
-                    <li>
-                        <span contenteditable="true" data-edit="list-2">출시 일정 공유</span>
-                        <span class="pv-badge" contenteditable="true" data-edit="badge-2">완료</span>
-                    </li>
-                    <li>
-                        <span contenteditable="true" data-edit="list-3">고객 인터뷰 정리</span>
-                        <span class="pv-badge" contenteditable="true" data-edit="badge-3">대기</span>
-                    </li>
-                </ul>
-                <div class="pv-toast">
-                    <span contenteditable="true" data-edit="toast-text">저장했어요</span>
-                    <button type="button" contenteditable="true" data-edit="toast-btn">되돌리기</button>
+                <button id="addBtn" class="tb-btn" type="button">+ 요소 추가</button>
+                <button id="exportBtn" class="tb-btn tb-primary" type="button">내보내기</button>
+            </div>
+            <div id="canvas" class="canvas">
+                <div id="frame" class="frame">
+                    <div id="preview" class="pv" aria-label="미리보기"></div>
                 </div>
-                <section class="pv-split">
-                    <article class="pv-card">
-                        <h3 contenteditable="true" data-edit="set-h">프로젝트 설정</h3>
-                        <label class="pv-label" for="pv-scope" contenteditable="true" data-edit="set-scope">공개 범위</label>
-                        <select id="pv-scope" class="pv-input pv-select">
-                            <option>팀원만</option><option>회사 전체</option><option>링크가 있는 사람</option>
-                        </select>
-                        <fieldset class="pv-field">
-                            <legend contenteditable="true" data-edit="set-noti">알림</legend>
-                            <label class="pv-check"><input type="checkbox" checked><span contenteditable="true" data-edit="set-c1">마감 하루 전</span></label>
-                            <label class="pv-check"><input type="checkbox"><span contenteditable="true" data-edit="set-c2">댓글이 달리면</span></label>
-                        </fieldset>
-                        <fieldset class="pv-field">
-                            <legend contenteditable="true" data-edit="set-view">기본 보기</legend>
-                            <label class="pv-check"><input type="radio" name="pv-view" checked><span contenteditable="true" data-edit="set-r1">목록</span></label>
-                            <label class="pv-check"><input type="radio" name="pv-view"><span contenteditable="true" data-edit="set-r2">달력</span></label>
-                        </fieldset>
-                        <label class="pv-label" for="pv-range" contenteditable="true" data-edit="set-range">하루 목표 업무 수</label>
-                        <input id="pv-range" class="pv-range" type="range" min="1" max="10" value="4">
-                        <div class="pv-progress-head"><span contenteditable="true" data-edit="prog-label">프로필 완성도</span><b>70%</b></div>
-                        <div class="pv-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="프로필 완성도"><i></i></div>
-                    </article>
-                    <article class="pv-card">
-                        <h3 contenteditable="true" data-edit="team-h">팀</h3>
-                        <div class="pv-avatars">
-                            <span class="pv-avatar">민</span><span class="pv-avatar">서</span><span class="pv-avatar">J</span><span class="pv-avatar">현</span><span class="pv-avatar pv-more">+3</span>
-                            <span class="pv-avatars-text" contenteditable="true" data-edit="team-text">7명이 함께 보고 있어요</span>
-                        </div>
-                        <details class="pv-acc" open>
-                            <summary><span contenteditable="true" data-edit="faq1-q">팀원은 몇 명까지 초대할 수 있나요?</span></summary>
-                            <p contenteditable="true" data-edit="faq1-a">무료 요금제는 10명까지, 팀 요금제는 제한이 없어요.</p>
-                        </details>
-                        <details class="pv-acc">
-                            <summary><span contenteditable="true" data-edit="faq2-q">다른 도구에서 옮겨 올 수 있나요?</span></summary>
-                            <p contenteditable="true" data-edit="faq2-a">엑셀과 CSV 파일을 그대로 불러올 수 있어요.</p>
-                        </details>
-                        <div class="pv-skeleton" aria-label="불러오는 중" role="status"><i></i><i></i><i></i></div>
-                    </article>
-                </section>
-                <section class="pv-table-wrap">
-                    <table class="pv-table">
-                        <thead><tr><th contenteditable="true" data-edit="th-1">업무</th><th contenteditable="true" data-edit="th-2">담당</th><th contenteditable="true" data-edit="th-3">마감</th><th contenteditable="true" data-edit="th-4">상태</th></tr></thead>
-                        <tbody>
-                            <tr><td contenteditable="true" data-edit="td-1a">랜딩 페이지 문구</td><td contenteditable="true" data-edit="td-1b">김민지</td><td>11.28</td><td><span class="pv-badge pv-badge-on" contenteditable="true" data-edit="td-1d">진행 중</span></td></tr>
-                            <tr><td contenteditable="true" data-edit="td-2a">결제 화면 점검</td><td contenteditable="true" data-edit="td-2b">박서준</td><td>12.02</td><td><span class="pv-badge" contenteditable="true" data-edit="td-2d">대기</span></td></tr>
-                            <tr><td contenteditable="true" data-edit="td-3a">릴리스 노트</td><td contenteditable="true" data-edit="td-3b">이현</td><td>12.05</td><td><span class="pv-badge" contenteditable="true" data-edit="td-3d">완료</span></td></tr>
-                        </tbody>
-                    </table>
-                    <nav class="pv-pages" aria-label="페이지">
-                        <button type="button" aria-label="이전 페이지">‹</button><button type="button" class="on" aria-current="page">1</button><button type="button">2</button><button type="button">3</button><button type="button" aria-label="다음 페이지">›</button>
-                    </nav>
-                </section>
-                <section class="pv-modal-wrap">
-                    <div class="pv-modal" role="dialog" aria-modal="false" aria-labelledby="pv-modal-title">
-                        <h3 id="pv-modal-title" contenteditable="true" data-edit="modal-h">업무를 삭제할까요?</h3>
-                        <p contenteditable="true" data-edit="modal-p">삭제한 업무는 30일 동안 휴지통에 보관돼요.</p>
-                        <div class="pv-row">
-                            <a class="pv-btn pv-secondary" href="#" contenteditable="true" data-edit="modal-no">취소</a>
-                            <a class="pv-btn pv-primary" href="#" contenteditable="true" data-edit="modal-yes">삭제하기</a>
-                        </div>
-                    </div>
-                </section>
             </div>
         </main>
+        <aside id="inspector" class="inspector" aria-label="블록 설정" aria-live="off">
+        </aside>
     </div>
+    <div id="snack" class="snack" role="status" aria-live="polite" hidden>
+        <span id="snackText"></span>
+        <button id="snackUndo" class="snack-btn" type="button">되돌리기</button>
+    </div>
+    <p id="status" class="status-line" role="status" aria-live="polite" aria-atomic="true"></p>
+
+    <dialog id="addDlg" class="dlg" aria-labelledby="addTitle">
+        <div class="dlg-head">
+            <h2 id="addTitle">요소 추가</h2>
+            <button class="dlg-x" type="button" data-close aria-label="닫기">×</button>
+        </div>
+        <p class="hint">고른 블록 바로 아래에 들어가요</p>
+        <div id="addList" class="add-list"></div>
+    </dialog>
+
+    <dialog id="exportDlg" class="dlg" aria-labelledby="expTitle">
+        <div class="dlg-head">
+            <h2 id="expTitle">내보내기</h2>
+            <button class="dlg-x" type="button" data-close aria-label="닫기">×</button>
+        </div>
+        <form id="expForm" method="dialog">
+            <fieldset class="exp-choices">
+                <legend>무엇을 할까요?</legend>
+                <label class="exp-opt">
+                    <input type="radio" name="expKind" value="html" checked>
+                    HTML 파일 하나로 받기
+                    <small>다른 곳에서 바로 열 수 있는 파일</small>
+                </label>
+                <label class="exp-opt">
+                    <input type="radio" name="expKind" value="json">
+                    작업 파일(JSON)로 저장
+                    <small>나중에 다시 불러와서 고칠 수 있어요</small>
+                </label>
+                <label class="exp-opt">
+                    <input type="radio" name="expKind" value="load">
+                    작업 파일 불러오기
+                    <small>지금 화면은 바뀌어요</small>
+                </label>
+                <label class="exp-opt">
+                    <input type="radio" name="expKind" value="code">
+                    코드 복사
+                    <small>HTML 코드를 클립보드에 복사</small>
+                </label>
+            </fieldset>
+            <input id="loadFile" type="file" accept=".json,application/json" class="visually-hidden" tabindex="-1" aria-hidden="true">
+            <div class="dlg-actions">
+                <button class="btn-ghost" type="button" data-close>취소</button>
+                <button id="expRun" class="tb-btn tb-primary" type="button">실행</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>

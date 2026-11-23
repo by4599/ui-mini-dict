@@ -1,0 +1,62 @@
+/* chips */
+.sk-chips-fill .pv-chip-f:not(.on) { background: var(--surface); border-color: transparent; color: var(--title); }
+.sk-chips-soft .pv-chip-f:not(.on) { background: var(--tint); border-color: transparent; color: var(--point); }
+.sk-chips-dot .pv-chip-f { display: inline-flex; align-items: center; gap: 6px; }
+.sk-chips-dot .pv-chip-f::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--point); }
+.sk-chips-tag .pv-chip-f { border-radius: 2px; font-size: 0.8em; font-weight: 700; letter-spacing: 0.02em; }
+.sk-chips-shadow .pv-chip-f:not(.on) { border-color: transparent; background: var(--bg); box-shadow: 0 2px 8px color-mix(in srgb, var(--shade) 25%, transparent); }
+
+/* switch */
+.sk-switch-ios .pv-knob { width: 51px; height: 31px; }
+.sk-switch-ios .pv-knob::after { content: ""; width: 27px; height: 27px; top: 2px; left: 2px; box-shadow: 0 2px 4px color-mix(in srgb, var(--shade) 35%, transparent); }
+.sk-switch-ios .pv-switch input:checked + .pv-knob::after { transform: translateX(20px); }
+.sk-switch-square .pv-knob, .sk-switch-square .pv-knob::after { border-radius: 4px; }
+.sk-switch-square .pv-check input { border-radius: 0; appearance: auto; }
+
+/* list */
+.sk-list-cards .pv-list li { border: 0; background: var(--surface); border-radius: var(--radius); padding: 12px 16px; margin-bottom: 8px; }
+.sk-list-zebra .pv-list li { border: 0; padding-inline: 12px; }
+.sk-list-zebra .pv-list li:nth-child(odd) { background: var(--surface); border-radius: var(--radius); }
+.sk-list-plain .pv-list li { border: 0; }
+.sk-list-plain .pv-badge { border: 0; }
+
+/* toast */
+.sk-toast-light .pv-toast { background: var(--bg); color: var(--title); border: max(1px, var(--bw)) solid var(--line); box-shadow: 0 10px 30px -8px color-mix(in srgb, var(--shade) 40%, transparent); }
+.sk-toast-light .pv-toast button { color: var(--point); }
+.sk-toast-point .pv-toast { background: var(--point); color: var(--on-point); }
+.sk-toast-point .pv-toast button { color: var(--on-point); }
+.sk-toast-accent .pv-toast { background: var(--surface); color: var(--title); border-left: 4px solid var(--point); }
+.sk-toast-accent .pv-toast button { color: var(--point); }
+
+/* settings */
+.sk-settings-plain .pv-card { background: transparent; border: 0; padding: 0; }
+.sk-settings-line .pv-field { padding-top: 12px; border-top: max(1px, var(--bw)) solid var(--line); }
+.sk-settings-compact .pv-card { gap: 4px; font-size: 0.9em; padding: calc(var(--gap) * 0.7); }
+
+/* team */
+.sk-team-plain .pv-card { background: transparent; border: 0; padding: 0; }
+.sk-team-boxed .pv-acc { background: var(--surface); border-radius: var(--radius); padding: 0 14px; border: max(1px, var(--bw)) solid var(--line); margin-top: 8px; }
+.sk-team-boxed .pv-acc:last-of-type { border-bottom: max(1px, var(--bw)) solid var(--line); }
+.sk-team-line .pv-card { background: transparent; border: 0; padding: 0; }
+.sk-team-line .pv-acc { border-top-width: 2px; }
+
+/* table */
+.sk-table-zebra .pv-table tbody tr:nth-child(even) td { background: var(--surface); }
+.sk-table-grid .pv-table th, .sk-table-grid .pv-table td { border: max(1px, var(--bw)) solid var(--line); }
+.sk-table-rows .pv-table { border-collapse: separate; border-spacing: 0 8px; }
+.sk-table-rows .pv-table td { background: var(--surface); border: 0; }
+.sk-table-rows .pv-table td:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.sk-table-rows .pv-table td:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+.sk-table-rows .pv-table th { border: 0; }
+.sk-table-minimal .pv-table td { border: 0; }
+.sk-table-minimal .pv-table th { border: 0; color: var(--title); font-weight: 800; }
+
+/* modal */
+.sk-modal-sheet .pv-modal-wrap { align-items: flex-end; padding-bottom: 0; }
+.sk-modal-sheet .pv-modal { max-width: none; border-radius: var(--radius) var(--radius) 0 0; padding-top: calc(var(--gap) * 1.4); position: relative; }
+.sk-modal-sheet .pv-modal::before { content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 40px; height: 4px; border-radius: 99px; background: var(--line); }
+.sk-modal-danger { --danger: color-mix(in srgb, #D93025 80%, var(--point)); }
+.sk-modal-danger .pv-modal { border-top: 4px solid var(--danger); }
+.sk-modal-danger .pv-primary { background: var(--danger); color: #fff; }
+.sk-modal-full .pv-modal { max-width: none; min-height: 220px; display: flex; flex-direction: column; }
+.sk-modal-full .pv-row { margin-top: auto; }
