@@ -1,0 +1,352 @@
+[
+ {
+  "name": "종이와 먹",
+  "bg": "#F7F5F0",
+  "title": "#1A1A1A",
+  "sub": "#6B6B6B",
+  "point": "#C54118"
+ },
+ {
+  "name": "클래식 블루",
+  "bg": "#FFFFFF",
+  "title": "#0F172A",
+  "sub": "#64748B",
+  "point": "#2F5BEA"
+ },
+ {
+  "name": "밀크와 에스프레소",
+  "bg": "#FAF7F2",
+  "title": "#2B1D14",
+  "sub": "#7A6555",
+  "point": "#B45821"
+ },
+ {
+  "name": "안개와 올리브",
+  "bg": "#F3F4EF",
+  "title": "#22261E",
+  "sub": "#666C5E",
+  "point": "#5E7124"
+ },
+ {
+  "name": "라이트 그레이 레드",
+  "bg": "#F2F2F2",
+  "title": "#111111",
+  "sub": "#666666",
+  "point": "#D03227"
+ },
+ {
+  "name": "크림과 네이비",
+  "bg": "#FBF8F1",
+  "title": "#14213D",
+  "sub": "#5C6378",
+  "point": "#C97F03"
+ },
+ {
+  "name": "세이지 포레스트",
+  "bg": "#EEF1EA",
+  "title": "#1F2D24",
+  "sub": "#5A675C",
+  "point": "#2D794D"
+ },
+ {
+  "name": "라벤더 미스트",
+  "bg": "#F5F3FA",
+  "title": "#231F35",
+  "sub": "#6A6480",
+  "point": "#6C4CE0"
+ },
+ {
+  "name": "피치와 버건디",
+  "bg": "#FFF4EC",
+  "title": "#3A1420",
+  "sub": "#85565B",
+  "point": "#C8324B"
+ },
+ {
+  "name": "민트와 딥틸",
+  "bg": "#EEF7F4",
+  "title": "#0E2E2A",
+  "sub": "#52716C",
+  "point": "#0F7F6C"
+ },
+ {
+  "name": "모래와 테라코타",
+  "bg": "#F4EDE4",
+  "title": "#2A211B",
+  "sub": "#766758",
+  "point": "#AE4E2A"
+ },
+ {
+  "name": "하늘과 잉크",
+  "bg": "#F0F5FA",
+  "title": "#0B1F33",
+  "sub": "#586878",
+  "point": "#1569EB"
+ },
+ {
+  "name": "바닐라 초콜릿",
+  "bg": "#FFF9EE",
+  "title": "#3B2416",
+  "sub": "#7E6A59",
+  "point": "#CD7E1A"
+ },
+ {
+  "name": "콘크리트 오렌지",
+  "bg": "#E9E9E6",
+  "title": "#1C1C1C",
+  "sub": "#5F5F5A",
+  "point": "#F63F00"
+ },
+ {
+  "name": "로즈쿼츠",
+  "bg": "#FBF1F1",
+  "title": "#3D1F24",
+  "sub": "#86646A",
+  "point": "#C83A56"
+ },
+ {
+  "name": "버터와 블랙",
+  "bg": "#FFF6D6",
+  "title": "#141414",
+  "sub": "#5E5A4A",
+  "point": "#E4572E"
+ },
+ {
+  "name": "북유럽 화이트",
+  "bg": "#FAFAFA",
+  "title": "#262626",
+  "sub": "#707070",
+  "point": "#367E72"
+ },
+ {
+  "name": "오트밀 네이비",
+  "bg": "#EFE9E1",
+  "title": "#1E2A44",
+  "sub": "#636876",
+  "point": "#2F4A8A"
+ },
+ {
+  "name": "레몬 소다",
+  "bg": "#FAFFF0",
+  "title": "#1B2210",
+  "sub": "#5C674B",
+  "point": "#7B9B12"
+ },
+ {
+  "name": "체리 블라썸",
+  "bg": "#FFF5F7",
+  "title": "#2E1A1F",
+  "sub": "#80616A",
+  "point": "#D62653"
+ },
+ {
+  "name": "스톤과 이끼",
+  "bg": "#E8E6E1",
+  "title": "#2B2A26",
+  "sub": "#67645C",
+  "point": "#55693A"
+ },
+ {
+  "name": "아이보리 와인",
+  "bg": "#FBF7EF",
+  "title": "#2E0F17",
+  "sub": "#765A5E",
+  "point": "#8E1F3B"
+ },
+ {
+  "name": "클레이",
+  "bg": "#EADBCB",
+  "title": "#2D1E14",
+  "sub": "#66503F",
+  "point": "#9A4A24"
+ },
+ {
+  "name": "페일블루 코랄",
+  "bg": "#EEF3F8",
+  "title": "#16202C",
+  "sub": "#596675",
+  "point": "#F05949"
+ },
+ {
+  "name": "핀테크 그린",
+  "bg": "#FFFFFF",
+  "title": "#191F28",
+  "sub": "#6B7684",
+  "point": "#00A86B"
+ },
+ {
+  "name": "미드나잇 골드",
+  "bg": "#0F1115",
+  "title": "#F2EEE6",
+  "sub": "#9A9AA0",
+  "point": "#D4A84B"
+ },
+ {
+  "name": "차콜 라임",
+  "bg": "#1A1A1A",
+  "title": "#F5F5F0",
+  "sub": "#A3A39B",
+  "point": "#C6F36B"
+ },
+ {
+  "name": "딥네이비 코랄",
+  "bg": "#13203A",
+  "title": "#F3F0EA",
+  "sub": "#9AA3B5",
+  "point": "#FF7A59"
+ },
+ {
+  "name": "에스프레소 다크",
+  "bg": "#1E1612",
+  "title": "#F3E9DD",
+  "sub": "#A8978A",
+  "point": "#E0954B"
+ },
+ {
+  "name": "포레스트 나이트",
+  "bg": "#12201A",
+  "title": "#E7EFE9",
+  "sub": "#93A79B",
+  "point": "#7FD69B"
+ },
+ {
+  "name": "잉크와 시안",
+  "bg": "#0B1320",
+  "title": "#E6EEF8",
+  "sub": "#8796AA",
+  "point": "#38BDF8"
+ },
+ {
+  "name": "와인 셀러",
+  "bg": "#24121A",
+  "title": "#F5E8EC",
+  "sub": "#B08E98",
+  "point": "#F2A3B6"
+ },
+ {
+  "name": "그라파이트 레드",
+  "bg": "#202124",
+  "title": "#F1F1F1",
+  "sub": "#9AA0A6",
+  "point": "#FF5449"
+ },
+ {
+  "name": "올리브 다크",
+  "bg": "#1F221A",
+  "title": "#ECEBDF",
+  "sub": "#A3A493",
+  "point": "#D8C36A"
+ },
+ {
+  "name": "퍼플 나이트",
+  "bg": "#1A1625",
+  "title": "#EEEAF6",
+  "sub": "#A39CB5",
+  "point": "#B69CFF"
+ },
+ {
+  "name": "오션 딥",
+  "bg": "#0A2433",
+  "title": "#E5F1F6",
+  "sub": "#86A6B5",
+  "point": "#4FD1C5"
+ },
+ {
+  "name": "블랙 옐로",
+  "bg": "#000000",
+  "title": "#FFFFFF",
+  "sub": "#9E9E9E",
+  "point": "#FFD400"
+ },
+ {
+  "name": "슬레이트 앰버",
+  "bg": "#1E293B",
+  "title": "#F1F5F9",
+  "sub": "#94A3B8",
+  "point": "#F59E0B"
+ },
+ {
+  "name": "모카",
+  "bg": "#2A211C",
+  "title": "#F1E6DA",
+  "sub": "#A99686",
+  "point": "#D9A86C"
+ },
+ {
+  "name": "다크 세이지",
+  "bg": "#1C2320",
+  "title": "#E3E8E2",
+  "sub": "#97A29A",
+  "point": "#E07A5F"
+ },
+ {
+  "name": "클라인 블루",
+  "bg": "#1D3FBB",
+  "title": "#FFFFFF",
+  "sub": "#C3CEF5",
+  "point": "#FFD23F"
+ },
+ {
+  "name": "토마토",
+  "bg": "#A82E1B",
+  "title": "#FFF6EE",
+  "sub": "#F7CFC2",
+  "point": "#FFD23F"
+ },
+ {
+  "name": "머스타드",
+  "bg": "#F2C94C",
+  "title": "#1A1A1A",
+  "sub": "#5C4A12",
+  "point": "#1A4D8F"
+ },
+ {
+  "name": "포레스트 그린",
+  "bg": "#1F4D3A",
+  "title": "#F4EFE6",
+  "sub": "#BDCDC3",
+  "point": "#F2B84B"
+ },
+ {
+  "name": "핑크 블루",
+  "bg": "#FFC9D6",
+  "title": "#2B0F17",
+  "sub": "#69353F",
+  "point": "#1E3A8A"
+ },
+ {
+  "name": "라일락",
+  "bg": "#D9D2F5",
+  "title": "#1D1640",
+  "sub": "#4A4371",
+  "point": "#AD2933"
+ },
+ {
+  "name": "스카이 오렌지",
+  "bg": "#BFE3F5",
+  "title": "#0D2633",
+  "sub": "#3A5B6B",
+  "point": "#AE390C"
+ },
+ {
+  "name": "민트 퍼플",
+  "bg": "#C9F0DD",
+  "title": "#0F2A1F",
+  "sub": "#3C5F4F",
+  "point": "#6D28D9"
+ },
+ {
+  "name": "테라코타",
+  "bg": "#8A3B24",
+  "title": "#FFF3EA",
+  "sub": "#EDC4B0",
+  "point": "#F2C14E"
+ },
+ {
+  "name": "크래프트지",
+  "bg": "#D8C3A5",
+  "title": "#2B2118",
+  "sub": "#57442F",
+  "point": "#1C538D"
+ }
+]

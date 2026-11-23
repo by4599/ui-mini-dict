@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI 스튜디오</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+    <link rel="stylesheet" href="studio.css">
+    <link rel="stylesheet" href="preview.css">
+    <script src="studio.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <aside class="panel">
+            <header>
+                <h1>UI 스튜디오</h1>
+                <a href="../" class="home">← UI 미니 사전</a>
+            </header>
+            <section>
+                <h2 class="sec-title">모양</h2>
+                <label class="ctl">
+                    <span class="ctl-name">모서리 둥글기</span>
+                    <output class="val" data-var="radius">12px</output>
+                    <input type="range" data-var="radius" min="0" max="32" step="1" value="12" aria-label="모서리 둥글기">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">버튼 높이</span>
+                    <output class="val" data-var="btn-h">44px</output>
+                    <input type="range" data-var="btn-h" min="32" max="64" step="2" value="44" aria-label="버튼 높이">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">버튼 좌우 여백</span>
+                    <output class="val" data-var="btn-px">20px</output>
+                    <input type="range" data-var="btn-px" min="10" max="40" step="2" value="20" aria-label="버튼 좌우 여백">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">본문 글자 크기</span>
+                    <output class="val" data-var="fs">15px</output>
+                    <input type="range" data-var="fs" min="13" max="19" step="1" value="15" aria-label="본문 글자 크기">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">제목 크기</span>
+                    <output class="val" data-var="h1">40px</output>
+                    <input type="range" data-var="h1" min="24" max="64" step="2" value="40" aria-label="제목 크기">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">요소 간격</span>
+                    <output class="val" data-var="gap">20px</output>
+                    <input type="range" data-var="gap" min="8" max="40" step="2" value="20" aria-label="요소 간격">
+                </label>
+                <label class="ctl">
+                    <span class="ctl-name">테두리 두께</span>
+                    <output class="val" data-var="bw">1px</output>
+                    <input type="range" data-var="bw" min="0" max="3" step="1" value="1" aria-label="테두리 두께">
+                </label>
+            </section>
+            <section>
+                <h2 class="sec-title">추천 색 조합</h2>
+                <p class="hint">누르면 바로 바뀌어요</p>
+                <div id="palettes" class="palettes" role="group" aria-label="추천 색 조합"></div>
+            </section>
+            <section>
+                <h2 class="sec-title">내 색 조합</h2>
+                <label class="color-row">
+                    <span>배경색</span>
+                    <input type="color" data-color="bg" value="#F7F5F0">
+                    <code class="hex-val">#F7F5F0</code>
+                </label>
+                <label class="color-row">
+                    <span>제목 글자색</span>
+                    <input type="color" data-color="title" value="#1A1A1A">
+                    <code class="hex-val">#1A1A1A</code>
+                </label>
+                <label class="color-row">
+                    <span>본문 글자색</span>
+                    <input type="color" data-color="sub" value="#6B6B6B">
+                    <code class="hex-val">#6B6B6B</code>
+                </label>
+                <label class="color-row">
+                    <span>포인트색</span>
+                    <input type="color" data-color="point" value="#C54118">
+                    <code class="hex-val">#C54118</code>
+                </label>
+                <ul id="contrast" class="contrast" aria-live="polite"></ul>
+            </section>
+            <footer>
+                <div class="actions">
+                    <button id="copyCss" class="btn-ghost" type="button">CSS 복사</button>
+                    <button id="reset" class="btn-ghost" type="button">처음으로</button>
+                </div>
+                <p class="hint">미리보기의 글자는 눌러서 바로 고칠 수 있어요</p>
+                <p id="status" class="status" role="status" aria-live="polite"></p>
+            </footer>
+        </aside>
+        <main class="stage">
+            <div id="preview" class="pv" aria-label="미리보기">
+                <nav class="pv-nav">
+                    <b class="pv-logo" contenteditable="true" data-edit="logo">브랜드</b>
+                    <div class="pv-links">
+                        <a href="#" contenteditable="true" data-edit="link-1">소개</a>
+                        <a href="#" contenteditable="true" data-edit="link-2">기능</a>
+                        <a href="#" contenteditable="true" data-edit="link-3">요금</a>
+                    </div>
+                    <a class="pv-btn pv-primary" href="#" contenteditable="true" data-edit="btn-nav">시작하기</a>
+                </nav>
+                <section class="pv-hero">
+                    <span class="pv-chip" contenteditable="true" data-edit="chip-hero">새 기능</span>
+                    <h1 class="pv-h1" contenteditable="true" data-edit="h1-hero">작은 팀을 위한 가장 쉬운 일정 관리</h1>
+                    <p class="pv-lead" contenteditable="true" data-edit="lead">복잡한 도구 없이 핵심 기능에만 집중하세요.</p>
+                    <div class="pv-row">
+                        <a class="pv-btn pv-primary" href="#" contenteditable="true" data-edit="btn-hero-1">무료로 시작하기</a>
+                        <a class="pv-btn pv-secondary" href="#" contenteditable="true" data-edit="btn-hero-2">더 알아보기</a>
+                    </div>
+                </section>
+                <section class="pv-cards">
+                    <article class="pv-card">
+                        <h3 contenteditable="true" data-edit="card1-h">함께 보는 일정</h3>
+                        <p contenteditable="true" data-edit="card1-p">팀 전체 일정을 한 화면에서 확인해요.</p>
+                    </article>
+                    <article class="pv-card">
+                        <h3 contenteditable="true" data-edit="card2-h">알아서 알려 주는 마감</h3>
+                        <p contenteditable="true" data-edit="card2-p">마감 하루 전에 담당자에게 알림이 가요.</p>
+                    </article>
+                    <article class="pv-card">
+                        <h3 contenteditable="true" data-edit="card3-h">가벼운 주간 리포트</h3>
+                        <p contenteditable="true" data-edit="card3-p">매주 월요일, 지난주 진행 상황을 정리해 드려요.</p>
+                    </article>
+                </section>
+                <section class="pv-form">
+                    <article class="pv-card">
+                        <label class="pv-label" for="pv-email" contenteditable="true" data-edit="form-label">이메일</label>
+                        <input id="pv-email" class="pv-input" type="email" placeholder="name@mail.com" aria-label="이메일">
+                        <div class="pv-tabs">
+                            <button class="pv-tab on" type="button" contenteditable="true" data-edit="tab-1">전체</button>
+                            <button class="pv-tab" type="button" contenteditable="true" data-edit="tab-2">진행 중</button>
+                            <button class="pv-tab" type="button" contenteditable="true" data-edit="tab-3">완료</button>
+                        </div>
+                        <div class="pv-chips">
+                            <span class="pv-chip-f on" contenteditable="true" data-edit="chip-f1">긴급</span>
+                            <span class="pv-chip-f" contenteditable="true" data-edit="chip-f2">중요</span>
+                            <span class="pv-chip-f" contenteditable="true" data-edit="chip-f3">대기</span>
+                        </div>
+                        <label class="pv-switch">
+                            <input type="checkbox" checked>
+                            <span class="pv-knob"></span>
+                            <span contenteditable="true" data-edit="switch-text">알림 받기</span>
+                        </label>
+                    </article>
+                </section>
+                <ul class="pv-list">
+                    <li>
+                        <span contenteditable="true" data-edit="list-1">디자인 시안 검토</span>
+                        <span class="pv-badge" contenteditable="true" data-edit="badge-1">진행 중</span>
+                    </li>
+                    <li>
+                        <span contenteditable="true" data-edit="list-2">출시 일정 공유</span>
+                        <span class="pv-badge" contenteditable="true" data-edit="badge-2">완료</span>
+                    </li>
+                    <li>
+                        <span contenteditable="true" data-edit="list-3">고객 인터뷰 정리</span>
+                        <span class="pv-badge" contenteditable="true" data-edit="badge-3">대기</span>
+                    </li>
+                </ul>
+                <div class="pv-toast">
+                    <span contenteditable="true" data-edit="toast-text">저장했어요</span>
+                    <button type="button" contenteditable="true" data-edit="toast-btn">되돌리기</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
